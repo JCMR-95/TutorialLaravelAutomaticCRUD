@@ -73,7 +73,7 @@ class LibroController extends Controller
     public function edit($id)
     {
         $libro = Libro::find($id);
-
+        toastr()->success('Success Message');
         return view('libro.edit', compact('libro'));
     }
 
@@ -87,7 +87,7 @@ class LibroController extends Controller
     public function update(Request $request, Libro $libro)
     {
         request()->validate(Libro::$rules);
-
+        toastr()->success('Success Message');
         $libro->update($request->all());
 
         return redirect()->route('libros.index')

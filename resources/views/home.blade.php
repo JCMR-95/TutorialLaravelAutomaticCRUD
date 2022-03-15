@@ -14,7 +14,35 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <button type="button" class="btn btn-primary" @click="NuevoDato()">Nuevo</button> 
+                    <br>
+                    <br> 
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Posicion</th>
+                            <th scope="col">Salario</th>
+                            <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="dato in datos">
+                            <th scope="row">@{{dato.id}}</th>
+                            <td>@{{dato.nombre}}</td>
+                            <td>@{{dato.posicion}}</td>
+                            <td>@{{dato.salario}}</td>
+                            <td>
+
+                                <button type="button" class="btn btn-outline-info" @click="EditarDato(dato)">Editar</button>
+                                <button type="button" class="btn btn-outline-danger" @click="EliminarDato(dato)">Eliminar</button>
+
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

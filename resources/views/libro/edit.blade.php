@@ -29,3 +29,6 @@
         </div>
     </section>
 @endsection
+@jquery
+@toastr_js
+@toastr_render
